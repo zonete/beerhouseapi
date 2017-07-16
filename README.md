@@ -4,7 +4,7 @@ O objetivo deste projeto é avaliar o desenvolvimento de uma aplicação java ut
 
 ### Baseado no [Building an Application with Spring Boot](https://spring.io/guides/gs/spring-boot/).
 
-#Instrução para Build
+# Instrução para Build
 
  1. Realizar o **Git Clone** do repositório https://github.com/zonete/beerhouseapi.git
  2. Criar tabela beer  utilizando o script abaixo:
@@ -34,7 +34,7 @@ spring.datasource.password=senhabd
  5. Executar a classe "**Application.java**" localizada no package "**com.beerhouse**"
  6. A aplicação será iniciada no endereço **http://localhost:9000/beerhouse/beers/**
 
- #Instrução para Testes
+ # Instrução para Testes
  O Projeto disponibiliza de uma classe de testes criada com JUnit localizada em "src/test/java/ApplicationTests.java"
  >Pelo Eclipse clicar com o botão sobre a classe de teste e selecionar a opção **Run as -> Junit Test**
  ![alt text](https://raw.githubusercontent.com/zonete/beerhouseapi/master/docs/imgs/testes.png)
