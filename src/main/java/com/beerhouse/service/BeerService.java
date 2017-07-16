@@ -25,14 +25,15 @@ public class BeerService {
 		return beerRepository.findOne(id);
 	}
 	
-	public BeerEntity Insert(BeerEntity beer) {
+	public BeerEntity Insert(BeerEntity beer) throws Exception {
+		Valid(beer);
 		return beerRepository.save(beer);
 	}
 	
-	public BeerEntity Update(BeerEntity beer) {
+	public BeerEntity Update(BeerEntity beer) throws Exception {
 		if(beerRepository.findOne(beer.getId())==null)
 			return null;
-		
+		Valid(beer);
 		return beerRepository.save(beer);
 	}
 	
@@ -44,5 +45,8 @@ public class BeerService {
 		
 	}
 
-	
+	private void Valid(BeerEntity beer) throws Exception {
+		if(beer.getName().isEmpty())
+			throw new Exception("Nome é obrigatório");
+	}
 }

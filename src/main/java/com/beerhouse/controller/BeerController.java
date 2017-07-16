@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.beerhouse.entity.BeerEntity;
 import com.beerhouse.service.BeerService;
+import com.mysql.fabric.Response;
 @CrossOrigin
 @RestController
 public class BeerController {
@@ -55,7 +56,7 @@ public class BeerController {
 	}
 
 	@RequestMapping(value = "beers/{id}", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<BeerEntity> inserir(@PathVariable(value="id") Integer id, @RequestBody BeerEntity beer){
+	public ResponseEntity<BeerEntity> update(@PathVariable(value="id") Integer id, @RequestBody BeerEntity beer){
         try {
         	beer.setId(id);
         	BeerEntity result = beerService.Update(beer);
@@ -67,13 +68,13 @@ public class BeerController {
 	}
 	
 	@RequestMapping(value  = "beers/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<BeerEntity> delete(@PathVariable(value="id")Integer id){
+	public ResponseEntity<Boolean> delete(@PathVariable(value="id")Integer id){
         try {
         	beerService.Delete(id);
-        	return new ResponseEntity<>(HttpStatus.OK);
+        	return new ResponseEntity<Boolean>(true,HttpStatus.OK);
 			
 		}catch (Exception e) {
-			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Boolean>(false,HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 	
