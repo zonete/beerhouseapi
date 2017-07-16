@@ -6,7 +6,7 @@ O objetivo deste projeto é avaliar o desenvolvimento de uma aplicação java ut
 
 #Instrução para Build
 
- 1. Realizar o Git Clone do repositório https://github.com/zonete/beerhouseapi.git
+ 1. Realizar o **Git Clone** do repositório https://github.com/zonete/beerhouseapi.git
  2. Criar tabela beer  utilizando o script abaixo:
 <pre>
    create table beer
@@ -20,7 +20,7 @@ O objetivo deste projeto é avaliar o desenvolvimento de uma aplicação java ut
 	    	price float null
 	    );
 </pre>
-*Obs.: Script da tabela se encontra na pasta docs/script.sql*
+*Obs.: Script da tabela se encontra na pasta **docs/script.sql***
  3. Importar o projeto para dentro da sua IDE como um projeto MAVEN existente.
 > *Nota: Caso estiver utilizando o Eclipse  (File -> Import) na tela aberta selecionar a opção "Existing Maven Projects". Na próxima tela selecionar o diretório onde foi realizado o clone do projeto e avançar*
 
@@ -31,6 +31,10 @@ spring.datasource.username=usuarioacessobd
 spring.datasource.password=senhabd
 </pre>
 
- 5. Executar a classe "Application.java" localizada no package "com.beerhouse"
+ 5. Executar a classe "**Application.java**" localizada no package "**com.beerhouse**"
+ 6. A aplicação será iniciada no endereço **http://localhost:9000/beerhouse/beers/**
 
- 6. A aplicação será iniciada no endereço http://localhost:9000/beerhouse/beers/
+ #Instrução para Testes
+ O Projeto disponibiliza de uma classe de testes criada com JUnit localizada em "src/test/java/ApplicationTests.java"
+ >Pelo Eclipse clicar com o botão sobre a classe de teste e selecionar a opção **Run as -> Junit Test**
+ ![alt text](https://raw.githubusercontent.com/zonete/beerhouseapi/master/docs/imgs/testes.png)
